@@ -1,0 +1,670 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  scroll-behavior: smooth;
+  /*
+  scroll-snap-type: y mandatory;
+  */
+}
+
+/*Untuk Span*/
+span {
+  color: #f9004d;
+}
+
+/*Untuk Blurbox*/
+.home-Blurbox,
+.about-Blurbox,
+.technology-Blubox,
+.future-Blurbox {
+  top: 5%;
+  left: 5%;
+  right: 5%;
+  bottom: 5%;
+  position: absolute;
+  background-color: #ffffff10;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 40px;
+}
+
+/*Untuk Flip Card untuk Home dan About*/
+/*Untuk Card Home*/
+.home-Card {
+  top: 12%;
+  left: 60%;
+  position: relative;
+  background-color: transparent;
+  width: 340px;
+  height: 500px;
+  cursor: pointer;
+  perspective: 1000px;
+}
+/*untuk Card About*/
+.about-Card {
+  top: 15%;
+  left: 15%;
+  position: relative;
+  background-color: transparent;
+  width: 420px;
+  height: 460px;
+  cursor: pointer;
+  perspective: 1000px;
+}
+.home-CardInner,
+.about-CardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: 2px solid #f9004d;
+  border-radius: 20px;
+}
+.home-Card:hover .home-CardInner,
+.about-Card:hover .about-CardInner {
+  transform: rotateY(180deg);
+}
+.home-CardFront,
+.home-CardBack,
+.about-CardFront,
+.about-CardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.home-CardFront,
+.about-CardFront {
+  background-size: cover;
+  color: black;
+  border-radius: 20px;
+  transform: scaleX(-1);
+}
+.home-CardBack,
+.about-CardBack {
+  background-size: cover;
+  color: white;
+  transform: rotateY(180deg);
+  border-radius: 20px;
+}
+.home-CardFront {
+  background-image: url(Image-Home/Card-Home.png);
+}
+.home-CardBack {
+  background-image: url(Image-Home/Card-Home\(blur\).png);
+}
+.about-CardFront {
+  background-image: url(Image-Home/Card-About.png);
+}
+.about-CardBack {
+  background-image: url(Image-Home/Card-About\(blur\).png);
+}
+.home-CardBack p,
+.about-CardBack p {
+  position: absolute;
+  top: 30%;
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  align-items: center;
+  display: flex;
+}
+
+/*Untuk Navbar*/
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-left: 2%;
+  padding-right: 2%;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  width: 96%;
+  font-size: 15px;
+}
+/*untuk InnoTech*/
+.logo {
+  text-decoration: none;
+  text-transform: capitalize;
+  font-family: "Audiowide", sans-serif;
+  background: -webkit-linear-gradient(45deg, #2352fc, #f9004d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+}
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 10px 10px;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+nav ul li a.active,
+nav ul li a:hover {
+  color: #f9004d;
+  transform: 0.4s;
+}
+
+/*untuk Next Button*/
+.next-btn {
+  background: linear-gradient(45deg, #2352fc, #f9004d);
+  color: white;
+  text-decoration: none;
+  border: none;
+  padding: 10px 40px;
+  border-radius: 15px;
+  transition: transform 0.4s;
+}
+/*animation besar kecil*/
+.next-btn:hover {
+  transform: scale(1.2);
+  text-decoration: none;
+  color: white;
+}
+
+/*Section Home*/
+.home {
+  height: 100vh;
+  width: 100%;
+  background-image: url("Image-Home/Background-Home.jpg");
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  scroll-snap-align: start;
+}
+
+/*Untuk Home Text*/
+.home-Text {
+  position: relative;
+  top: 30%;
+  left: 5%;
+  width: 50%;
+}
+.home-Text h3 {
+  color: #f9004d;
+  letter-spacing: 2px;
+  font-size: 20px;
+}
+.home-Text h1 {
+  color: white;
+  font-size: 50px;
+  margin: 10px 0px 10px;
+}
+.home-Text p {
+  color: white;
+  font-size: 20px;
+  line-height: 1.4;
+}
+/*home and about button*/
+.about-Text button,
+.home-Text button {
+  margin: 10px 0px 10px;
+  background-color: #f9004d;
+  border: 1px solid transparent;
+  padding: 10px 20px;
+  border-radius: 15px;
+  transition: transform 0.4s;
+  cursor: pointer;
+}
+.about-Text button a,
+.home-Text button a {
+  font-size: 15px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.about-Text button:hover,
+.home-Text button:hover {
+  transform: scale(1.2);
+}
+.multiText {
+  color: white;
+}
+
+/*Section About*/
+.about {
+  background-image: url(Image-Home/Background-Next.jpeg);
+  background-size: cover;
+  height: 860px;
+  width: 100%;
+  position: relative;
+  /*
+  scroll-snap-align: start;
+  */
+}
+
+/*Untuk About Text*/
+.about-Text {
+  position: relative;
+  left: 55%;
+  width: 37%;
+  top: 10%;
+}
+.about-Text h1 {
+  color: white;
+  font-size: 45px;
+  margin: 10px 0px 10px;
+}
+.about-Text p {
+  color: white;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+/*Section Technology*/
+.technology {
+  height: 100vh;
+  width: 100%;
+  background-image: url(Image-Home/Background-Next.jpeg);
+  background-size: cover;
+  position: relative;
+  /*
+  scroll-snap-align: start;
+  */
+}
+
+/*Untuk Technology Text*/
+.technology-Text p {
+  color: white;
+  position: relative;
+  margin-top: 1%;
+  text-align: center;
+  font-size: 40px;
+}
+
+
+/*Untuk Technology Card*/
+.technology-Card {
+  align-items: center;
+}
+
+.Vr-Card {
+  background-image: url(Image-Home/Card-VR.png);
+  left: 2%;
+}
+.AI-Card {
+  background-image: url(Image-Home/Card-AI.jpg);
+  left: 34.5%;
+}
+.Drone-Card {
+  background-image: url(Image-Home/Card-Drone.png);
+  right: 2%;
+}
+
+.Vr-Card,
+.AI-Card,
+.Drone-Card {
+  position: absolute;
+  top: 12%;
+  width: 370px;
+  height: 440px;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  color: #f9004d;
+  font-weight: bold;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.Vr-Card::before,
+.AI-Card::before,
+.Drone-Card::before,
+.Vr-Card::after,
+.AI-Card::after,
+.Drone-Card::after {
+  position: absolute;
+  content: "";
+  width: 20%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: #f9004d;
+  transition: all 0.5s;
+}
+
+.Vr-Card::before,
+.AI-Card::before,
+.Drone-Card::before {
+  top: 0;
+  right: 0;
+  border-radius: 0 15px 0 100%;
+}
+
+.Vr-Card::after,
+.AI-Card::after,
+.Drone-Card::after {
+  bottom: 0;
+  left: 0;
+  border-radius: 0 100% 0 15px;
+}
+
+.Vr-Card:hover::before,
+.AI-Card:hover::before,
+.Drone-Card:hover::before,
+.Vr-Card:hover:after,
+.AI-Card:hover:after,
+.Drone-Card:hover:after {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  transition: all 0.5s;
+}
+
+.Vr-Card:hover:after {
+  content: "Virtual reality is not just about entertainment or escapism, it's about creating a more immersive and engaging way of experiencing the world around us.";
+  text-align: center;
+  color: white;
+}
+.AI-Card:hover:after {
+  content: "Artificial Intelligence is not just a tool to automate tasks, it's a transformative technology that empowers us to solve complex problems and unlock new possibilities for the future.";
+  text-align: center;
+  color: white;
+}
+.Drone-Card:hover:after {
+  content: "Drone technology is not just about taking flight, it's about gaining a new perspective and unlocking limitless opportunities for innovation and progress.";
+  text-align: center;
+  color: white;
+}
+
+/*Untuk Technology Button*/
+.VR-Button,
+.AI-Button,
+.Drone-Button {
+  background-color: #f9004d;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid transparent;
+  padding: 10px 20px;
+  border-radius: 15px;
+  transition: transform 0.4s;
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
+}
+.VR-Button:hover,
+.AI-Button:hover,
+.Drone-Button:hover {
+  transform: scale(1.2);
+  text-decoration: none;
+  color: white;
+}
+.VR-Button {
+  position: absolute;
+  left: 12%;
+  bottom: 3%;
+}
+.AI-Button {
+  position: absolute;
+  left: 45%;
+  bottom: 3%;
+}
+.Drone-Button {
+  position: absolute;
+  right: 12%;
+  bottom: 3%;
+}
+
+
+/*Section Future*/
+.future{
+  background-image: url(Image-Home/Background-Next.jpeg);
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box
+}
+/*Untuuk Future text*/
+.future-Text {
+  color: white;
+  position: relative;
+  margin-top: 1%;
+  text-align: center;
+  font-size: 40px;
+}
+
+.future-Slide {
+  max-width: 800px;
+  position: relative;
+  margin: auto;
+  border: 2px solid #f9004d;
+  border-radius: 20px;
+  margin-top: 1%;
+}
+.mySlides {
+  display: none
+}
+
+.my-Slide img {
+  vertical-align: middle;
+  width: 800px;
+  height: 450px;
+  border-radius: 20px;
+  object-fit: fill;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Slide text */
+.slide-TextQC,
+.slide-TextMR,
+.slide-TextBp,
+.slide-TextNT,
+.slide-TextBC,
+.slide-TextIOT,
+.slide-TextSC {
+  position: absolute;
+  bottom: 1%;
+  width: 100%;
+  height: 100%;
+}
+
+.slide-TextQC h2{
+  color: #f9004d;
+  position: absolute;
+  top: 35%;
+  left: 10%;
+  font-size: 60px;
+  width: 20%;
+}
+.slide-TextQC p{
+  color: white;
+  position: absolute;
+  font-size: 20px;
+  top: 30%;
+  left: 50%;
+  width: 40%;
+}
+
+
+.slide-TextMR h2{
+  color: #f9004d;
+  position: absolute;
+  top: 35%;
+  right: 15%;
+  font-size: 65px;
+  width: 20%;
+}
+.slide-TextMR p{
+  color: white;
+  position: absolute;
+  font-size: 20px;
+  top: 25%;
+  left: 15%;
+  width: 45%;
+}
+
+.slide-TextBP h2{
+  color: #f9004d;
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  font-size: 65px;
+  width: 20%;
+}
+.slide-TextBP p{
+  color: white;
+  position: absolute;
+  font-size: 20px;
+  top: 35%;
+  left: 15%;
+  width: 70%;
+}
+
+.slide-TextNT h2{
+  color: #f9004d;
+  position: absolute;
+  top: 15%;
+  left: 22%;
+  font-size: 65px;
+  width: 20%;
+}
+.slide-TextNT p{
+  color: white;
+  position: absolute;
+  font-size: 20px;
+  top: 35%;
+  left: 15%;
+  width: 70%;
+  text-align: center;
+}
+
+.slide-TextBC h2{
+  color: #f9004d;
+  position: absolute;
+  top: 25%;
+  right: 15%;
+  font-size: 65px;
+}
+.slide-TextBC p{
+  color: white;
+  position: absolute;
+  font-size: 20px;
+  top: 45%;
+  right: 15%;
+  width: 70%;
+  text-align: end;
+}
+
+.slide-TextIOT h2{
+  color: #f9004d;
+  position: absolute;
+  top: 25%;
+  right: 5%;
+  font-size: 55px;
+  width: 35%;
+  text-align: center;
+}
+.slide-TextIOT p{
+  color: white;
+  position: absolute;
+  font-size: 20px;
+  top: 20%;
+  left: 15%;
+  width: 45%;
+}
+
+
+.slide-TextSC h2{
+  color: #f9004d;
+  position: absolute;
+  top: 35%;
+  left: 10%;
+  font-size: 60px;
+  width: 20%;
+}
+.slide-TextSC p{
+  color: white;
+  position: absolute;
+  font-size: 20px;
+  top: 25%;
+  left: 40%;
+  width: 50%;
+}
+
+.slide-Number {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active-class2, .dot:hover {
+  background-color: #f9004d;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+
+
+
+
